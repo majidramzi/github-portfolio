@@ -12,6 +12,8 @@ Fork this repository, enable GitHub Pages, and immediately get a polished person
 
 ## Live Demo
 
+[https://majidramzi.github.io/github-portfolio/](https://majidramzi.github.io/github-portfolio/)
+
 Once deployed to GitHub Pages, your portfolio is available automatically at:
 
 - **Project Pages:** `https://<username>.github.io/github-portfolio/`
