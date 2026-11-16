@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      'SF Mono',
+      Menlo,
+      Monaco,
+      Consolas,
+      'Liberation Mono',
+      'Courier New',
+      monospace;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(99 102 241);
+    outline-offset: 2px;
+  }
+}
+
+/* Subtle architectural grid background for hero */
+.hero-grid-bg {
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(99, 102, 241, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.08), transparent 40%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    32px 32px,
+    32px 32px;
+}
+
+.dark .hero-grid-bg {
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(99, 102, 241, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.1), transparent 40%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+}
+
+/* Sanitized README Markdown Typography */
+.readme-prose {
+  color: #334155;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.dark .readme-prose {
+  color: #cbd5e1;
+}
+
+.readme-prose > :first-child {
+  margin-top: 0;
+}
+
+.readme-prose > :last-child {
+  margin-bottom: 0;
+}
+
+.readme-prose h1,
+.readme-prose h2,
+.readme-prose h3,
+.readme-prose h4,
+.readme-prose h5,
+.readme-prose h6 {
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-top: 1.65em;
+  margin-bottom: 0.65em;
+}
+
+.dark .readme-prose h1,
+.dark .readme-prose h2,
+.dark .readme-prose h3,
+.dark .readme-prose h4,
+.dark .readme-prose h5,
+.dark .readme-prose h6 {
+  color: #f8fafc;
+}
+
+.readme-prose h1 {
+  font-size: 1.625rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.readme-prose h2 {
+  font-size: 1.3rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dark .readme-prose h1,
+.dark .readme-prose h2 {
+  border-bottom-color: #1e293b;
+}
+
+.readme-prose h3 {
+  font-size: 1.1rem;
+}
+
+.readme-prose h4 {
+  font-size: 1rem;
+}
+
+.readme-prose p {
+  margin-top: 0.85em;
+  margin-bottom: 0.85em;
+}
+
+.readme-prose a {
+  color: #4f46e5;
+  text-decoration: underline;
+  text-decoration-color: rgba(79, 70, 229, 0.35);
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+
+.readme-prose a:hover {
+  color: #4338ca;
+  text-decoration-color: currentColor;
+}
+
+.dark .readme-prose a {
+  color: #818cf8;
+  text-decoration-color: rgba(129, 140, 248, 0.35);
+}
+
+.dark .readme-prose a:hover {
+  color: #a5b4fc;
+}
+
+.readme-prose ul,
+.readme-prose ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.9em;
+  padding-left: 1.5rem;
+}
+
+.readme-prose ul {
+  list-style-type: disc;
+}
+
+.readme-prose ol {
+  list-style-type: decimal;
+}
+
+.readme-prose li {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.readme-prose li:has(> input.md-task-checkbox) {
+  list-style-type: none;
+  margin-left: -1.35rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.readme-prose input.md-task-checkbox {
+  width: 0.95rem;
+  height: 0.95rem;
+  accent-color: #4f46e5;
+  flex-shrink: 0;
+  transform: translateY(1px);
+}
+
+.readme-prose blockquote {
+  margin: 1rem 0;
+  padding: 0.65rem 1rem;
+  border-left: 3px solid #6366f1;
+  background-color: #f8fafc;
+  color: #475569;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.dark .readme-prose blockquote {
+  background-color: rgba(30, 41, 59, 0.6);
+  color: #94a3b8;
+  border-left-color: #818cf8;
+}
+
+.readme-prose code {
+  font-size: 0.85em;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  padding: 0.15rem 0.38rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+}
+
+.dark .readme-prose code {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.readme-prose pre {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #1e293b;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.readme-prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+}
+
+.readme-prose .md-table-wrap {
+  margin: 1.1rem 0;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+}
+
+.dark .readme-prose .md-table-wrap {
+  border-color: #1e293b;
+}
+
+.readme-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.readme-prose th {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dark .readme-prose th {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  border-bottom-color: #1e293b;
+}
+
+.readme-prose td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dark .readme-prose td {
+  border-bottom-color: rgba(30, 41, 59, 0.75);
+}
+
+.readme-prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.readme-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.625rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+
+.readme-prose p > img:only-child {
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid #e2e8f0;
+}
+
+.dark .readme-prose p > img:only-child {
+  border-color: #1e293b;
+}
+
+.readme-prose hr {
+  margin: 1.75rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dark .readme-prose hr {
+  border-top-color: #1e293b;
+}
+
+.readme-prose kbd {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.78rem;
+  border-radius: 0.35rem;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  box-shadow: inset 0 -1px 0 #cbd5e1;
+}
+
+.dark .readme-prose kbd {
+  border-color: #475569;
+  background-color: #1e293b;
+  box-shadow: inset 0 -1px 0 #475569;
+}
+
+.readme-prose details {
+  margin: 0.9rem 0;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.625rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.dark .readme-prose details {
+  border-color: #1e293b;
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+.readme-prose summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dark .readme-prose summary {
+  color: #f1f5f9;
+}

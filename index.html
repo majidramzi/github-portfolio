@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Portfolio</title>
+    <meta
+      name="description"
+      content="Automatically generated developer portfolio showcasing public GitHub repositories, extracted README insights, technologies, and live demos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GitHub Portfolio" />
+    <meta
+      property="og:description"
+      content="Automatically generated developer portfolio showcasing public GitHub repositories, extracted README insights, technologies, and live demos."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="GitHub Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Automatically generated developer portfolio showcasing public GitHub repositories, extracted README insights, technologies, and live demos."
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('github-portfolio:theme');
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var shouldUseDark =
+            stored === 'dark' || (stored !== 'light' && prefersDark);
+          if (shouldUseDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // Ignore storage access errors in restricted browsing modes
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-500/20 selection:text-indigo-900 dark:bg-slate-950 dark:text-slate-100 dark:selection:bg-indigo-400/25 dark:selection:text-indigo-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
